@@ -1,0 +1,39 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+		
+				"editor.fontSize": 21.2,
+				"editor.fontWeight": "560",
+				"editor.mouseWheelZoom": true,
+				"editor.fontLigatures": true,
+				"editor.lineHeight": 1.7,
+				"editor.tabSize": 2,
+				"editor.insertSpaces": true,
+				"editor.detectIndentation": false,
+				"files.autoSave": "afterDelay",
+				"files.autoSaveDelay": 1000,
+				"workbench.colorTheme": "Houston",
+				"terminal.integrated.fontFamily": "'Cascadia Code', 'Cascadia Code PL', 'JetBrains Mono', 'Fira Code', 'Source Code Pro', monospace",
+				"terminal.integrated.fontSize": 16,
+				"terminal.integrated.fontWeight": "500"
+			},
+			"extensions": [
+				"ms-vscode.vscode-javascript",
+				"formulahendry.code-runner",
+				"bradlc.vscode-tailwindcss",
+				"esbenp.prettier-vscode",
+				"ms-vscode.vscode-json"
+			]
+		}
+	},
+	"postCreateCommand": "bash -c 'wget -O cascadia.zip https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip && unzip -q cascadia.zip -d cascadia && sudo mkdir -p /usr/share/fonts/cascadia && sudo cp cascadia/ttf/*.ttf /usr/share/fonts/cascadia/ && sudo fc-cache -fv && rm -rf cascadia cascadia.zip && npm install -g prettier eslint'"
+}
